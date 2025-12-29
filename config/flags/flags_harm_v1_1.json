@@ -1,0 +1,74 @@
+{
+  "rule_version": "finprom-v1.0",
+  "allowed_flags": [
+    {
+      "id": "uk_financial_promotion",
+      "title": "UK: Financial promotion (FSMA s21) / approval requirement",
+      "patterns": ["\\bfinancial\\s*promotion\\b", "FSMA\\s*\\(?s?21\\)?", "s21\\s*(gateway|approver|approval)", "\\bFPO\\s*2005\\b", "\\bCOBS\\s*4\\b", "英国.*(金融推广|FCA.*审批|未经.*授权)"],
+      "laws": [
+        {"title": "FSMA 2000 s21 (Financial promotion)", "uri": "https://www.legislation.gov.uk/ukpga/2000/8/section/21"},
+        {"title": "Financial Promotion Order 2005", "uri": "https://www.legislation.gov.uk/uksi/2005/1529/contents"},
+        {"title": "FCA Handbook — COBS 4 (Communicating with clients, including financial promotions)", "uri": "https://handbook.fca.org.uk/handbook/cobs4"},
+        {"title": "FCA PS23/13 — s21 approval gateway (policy statement)", "uri": "https://www.fca.org.uk/publication/policy/ps23-13.pdf"}
+      ]
+    },
+    {
+      "id": "uk_investment_advice_permission",
+      "title": "UK: Advising on investments (RAO art. 53) & general prohibition (s19)",
+      "patterns": ["\\bRAO\\s*2001\\b", "Article\\s*53", "advis(ing|e)\\s+on\\s+investments", "FSMA\\s*s?19", "英国.*(受监管活动|就投资提供建议)"],
+      "laws": [
+        {"title": "FSMA 2000 s19 (The general prohibition)", "uri": "https://www.legislation.gov.uk/ukpga/2000/8/section/19"},
+        {"title": "Regulated Activities Order 2001 — Article 53 (Advising on investments)", "uri": "https://www.legislation.gov.uk/uksi/2001/544/article/53"}
+      ]
+    },
+    {
+      "id": "us_investment_adviser_marketing",
+      "title": "US: Investment Adviser registration & Marketing Rule",
+      "patterns": ["Investment\\s+Advisers?\\s+Act", "15\\s*U\\.S\\.C\\.\\s*80b-2", "15\\s*U\\.S\\.C\\.\\s*80b-3", "Rule\\s*206\\(4\\)-1", "\\bMarketing\\s*Rule\\b", "注册.*投资顾问", "有偿.*(证券|投资).*建议"],
+      "laws": [
+        {"title": "15 U.S.C. §80b-2(a)(11) — Investment adviser definition", "uri": "https://www.law.cornell.edu/uscode/text/15/80b-2"},
+        {"title": "15 U.S.C. §80b-3 — Registration of investment advisers", "uri": "https://www.govinfo.gov/app/details/USCODE-2011-title15/USCODE-2011-title15-chap2D-subchapII-sec80b-3"},
+        {"title": "SEC Investment Adviser Marketing Rule (Rule 206(4)-1)", "uri": "https://www.sec.gov/rules-regulations/2020/12/investment-adviser-marketing"}
+      ]
+    },
+    {
+      "id": "us_broker_dealer_communications",
+      "title": "US: Broker-dealer communications with the public (FINRA Rule 2210)",
+      "patterns": ["FINRA\\s*Rule\\s*2210", "\\bretail\\s+communication\\b", "券商.*(宣传|广告|公开沟通)"],
+      "laws": [
+        {"title": "FINRA Rule 2210 — Communications with the Public", "uri": "https://www.finra.org/rules-guidance/rulebooks/finra-rules/2210"}
+      ]
+    },
+    {
+      "id": "us_general_solicitation_offering",
+      "title": "US: General solicitation & exempt offerings (Rule 506(c); Securities Act §5)",
+      "patterns": ["Rule\\s*506\\(c\\)", "\\bgeneral\\s+solicit(ation|ing)\\b", "Reg(ulation)?\\s*D", "Securities\\s*Act\\s*§?5", "一般性劝诱", "合格投资者"],
+      "laws": [
+        {"title": "Securities Act of 1933 §5 (15 U.S.C. §77e)", "uri": "https://www.law.cornell.edu/uscode/text/15/77e"},
+        {"title": "SEC — General solicitation (Rule 506(c)) overview", "uri": "https://www.sec.gov/resources-small-businesses/exempt-offerings/general-solicitation-rule-506c"},
+        {"title": "SEC — Exempt offerings (overview incl. Rule 506(c))", "uri": "https://www.sec.gov/resources-small-businesses/exempt-offerings"}
+      ]
+    },
+    {
+      "id": "au_afs_licence_financial_advice",
+      "title": "Australia: AFS licence requirement & definition of financial product advice",
+      "patterns": ["\\bAFS\\s+licen[cs]e\\b", "s911A", "s766B", "金融产品建议", "general\\s+advice|personal\\s+advice", "澳大利亚.*牌照"],
+      "laws": [
+        {"title": "Corporations Act 2001 s911A — Need for an Australian financial services licence", "uri": "https://www5.austlii.edu.au/au/legis/cth/consol_act/ca2001172/s911a.html"},
+        {"title": "Corporations Act 2001 s766B — Meaning of financial product advice", "uri": "https://www5.austlii.edu.au/au/legis/cth/consol_act/ca2001172/s766b.html"},
+        {"title": "Corporations Act 2001 — latest consolidated (Federal Register of Legislation)", "uri": "https://www.legislation.gov.au/C2004A00818/latest"},
+        {"title": "ASIC — Do you need an AFS licence?", "uri": "https://asic.gov.au/for-finance-professionals/afs-licensees/do-you-need-an-afs-licence/"}
+      ]
+    },
+    {
+      "id": "au_finfluencers_and_advertising",
+      "title": "Australia: Online ‘finfluencers’, advertising & communications",
+      "patterns": ["INFO\\s*269", "finfluencer", "RG\\s*234", "RG\\s*244", "推广|广告|宣传.*(金融|理财)"],
+      "laws": [
+        {"title": "ASIC INFO 269 — Discussing financial products and services online", "uri": "https://asic.gov.au/regulatory-resources/financial-services/giving-financial-product-advice/discussing-financial-products-and-services-online"},
+        {"title": "ASIC RG 234 — Advertising financial products and services (including credit)", "uri": "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-234-advertising-financial-products-and-services-including-credit-good-practice-guidance/"},
+        {"title": "ASIC RG 244 — Giving information, general advice and scaled advice", "uri": "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-244-giving-information-general-advice-and-scaled-advice/"}
+      ]
+    }
+  ]
+}

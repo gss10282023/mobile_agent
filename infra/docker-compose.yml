@@ -1,0 +1,23 @@
+# infra/docker-compose.yml
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: antifraud_pg
+    env_file: ./config/db.env
+    command: ["-c","shared_buffers=256MB","-c","max_wal_size=1GB","-c","timezone=UTC"]
+    ports:
+      - "5432:5432"   # 如 5432 被占用，可改成 "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/migrations:/migrations:ro
+      - ./sql/derived_templates:/derived_templates:ro
+      - ./sql/scripts:/scripts:ro
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:
