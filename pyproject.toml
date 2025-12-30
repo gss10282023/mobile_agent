@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mobile-agent"
+version = "0.1.0"
+description = "Control Android devices with UI-TARS 7B."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Mobile Agent Authors" },
+]
+dependencies = [
+  "uiautomator2>=2.16",
+  "openai>=1.43.0",
+  "Pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4.0",
+  "ruff>=0.5.0",
+  "mypy>=1.8.0",
+]
+
+[project.scripts]
+mobile-agent = "mobile_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mobile_agent*", "ui_tars_7b_kit*", "uia2_command_kit*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

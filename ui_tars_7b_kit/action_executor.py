@@ -162,7 +162,7 @@ class ADBExecutor(ActionExecutor):
         elif t == "drag":
             sx, sy = mapper.to_device(p["start_point"])
             ex, ey = mapper.to_device(p["end_point"])
-            cmds.append(SwipeCommand(sx=sx, sy=sy, ex=ex, ey=ey, duration=self.cfg.drag_s))
+            cmds.append(DragCommand(sx=sx, sy=sy, ex=ex, ey=ey, duration=self.cfg.drag_s))
 
         elif t == "scroll":
             # UI-TARS: scroll(point, direction)
